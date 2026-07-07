@@ -10,11 +10,12 @@ export const SectionLabel = ({ children }) => (
 );
 
 export function WorkCard({ work, index = 1 }) {
+  const pillTone = work.catKey === '3d' ? 'green' : work.catKey === 'app' ? 'violet' : work.catKey === 'other' ? 'amber' : '';
   return (
     <article className={`project-card fade-in d${Math.min(index, 5)}`}>
       <a href={`#/works/${work.id}`} onClick={(e) => { e.preventDefault(); goTo(`/works/${work.id}`); }}>
         <div className="project-thumb">
-          <span className={`cat-pill ${work.catKey === '3d' ? 'green' : work.catKey === 'app' ? 'violet' : ''}`}>{work.cat}</span>
+          <span className={`cat-pill ${pillTone}`}>{work.cat}</span>
           {work.thumb}
         </div>
         <div className="project-body">
@@ -31,6 +32,10 @@ export function WorkCard({ work, index = 1 }) {
 }
 
 export function DownloadRow({ file }) {
+  const fallbackText = `${file.name}\n${file.desc}`;
+  const href = file.file ?? `data:text/plain;charset=utf-8,${encodeURIComponent(fallbackText)}`;
+  const downloadName = file.file ? file.file.split('/').pop() : `${file.id}.txt`;
+
   return (
     <article className="download-row">
       <div className="download-thumb">{file.thumb}</div>
@@ -41,11 +46,10 @@ export function DownloadRow({ file }) {
       </div>
       <span className="download-meta">{file.size}</span>
       <span className="download-meta">{file.date}</span>
-      <a className="download-button" href={`data:text/plain;charset=utf-8,${encodeURIComponent(`${file.name}\n${file.desc}`)}`} download={`${file.id}.txt`} aria-label={`${file.name}をダウンロード`}>
+      <a className="download-button" href={href} download={downloadName} aria-label={`${file.name}をダウンロード`}>
         ↓
       </a>
     </article>
   );
 }
-
 

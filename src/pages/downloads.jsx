@@ -1,16 +1,9 @@
 import { useState } from 'react';
 import { DownloadRow } from '../components/PageShared.jsx';
-import { DOWNLOADS } from '../data/content.jsx';
+import { DOWNLOAD_CATEGORIES, DOWNLOADS } from '../data/content.jsx';
 
 export function DownloadsPage() {
   const [filter, setFilter] = useState('all');
-  const filters = [
-    ['all', 'All'],
-    ['3d', '3D Models'],
-    ['templates', 'Templates'],
-    ['data', 'Data'],
-    ['assets', 'Assets'],
-  ];
   const files = filter === 'all' ? DOWNLOADS : DOWNLOADS.filter((file) => file.category === filter);
 
   return (
@@ -20,7 +13,7 @@ export function DownloadsPage() {
           <h1 className="page-title">Downloads</h1>
           <p className="page-kicker">配布データ・素材</p>
           <div className="tabs">
-            {filters.map(([id, label]) => <button key={id} className={`tab ${filter === id ? 'active' : ''}`} onClick={() => setFilter(id)}>{label}</button>)}
+            {DOWNLOAD_CATEGORIES.map(({ id, label }) => <button key={id} className={`tab ${filter === id ? 'active' : ''}`} onClick={() => setFilter(id)}>{label}</button>)}
           </div>
         </div>
       </section>
@@ -39,4 +32,3 @@ export function DownloadsPage() {
     </div>
   );
 }
-

@@ -1,11 +1,9 @@
 import { useMemo, useState } from 'react';
 import { WorkCard } from '../components/PageShared.jsx';
-import { PROJECTS } from '../data/content.jsx';
+import { PROJECT_CATEGORIES, PROJECTS } from '../data/content.jsx';
 
 export function WorksPage() {
   const [filter, setFilter] = useState('all');
-  const filters = ['all', 'web', 'app', '3d', 'data'];
-  const labels = { all: 'All', web: 'Web', app: 'App', '3d': '3D', data: 'Data' };
   const works = useMemo(() => filter === 'all' ? PROJECTS : PROJECTS.filter((work) => work.catKey === filter), [filter]);
 
   return (
@@ -14,9 +12,9 @@ export function WorksPage() {
         <div className="wrap">
           <h1 className="page-title">Works</h1>
           <p className="page-kicker">制作実績</p>
-          <p className="page-body">Web制作、アプリ、3Dデータなど、これまでに作ったものをまとめています。</p>
+          <p className="page-body">Web制作、アプリ、3D、その他の制作物など、これまでに作ったものをまとめています。</p>
           <div className="tabs">
-            {filters.map((id) => <button key={id} className={`tab ${filter === id ? 'active' : ''}`} onClick={() => setFilter(id)}>{labels[id]}</button>)}
+            {PROJECT_CATEGORIES.map(({ id, label }) => <button key={id} className={`tab ${filter === id ? 'active' : ''}`} onClick={() => setFilter(id)}>{label}</button>)}
           </div>
         </div>
       </section>
@@ -34,4 +32,3 @@ export function WorksPage() {
     </div>
   );
 }
-
