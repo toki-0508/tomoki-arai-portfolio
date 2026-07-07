@@ -59,78 +59,7 @@
   line-height: 1.95;
   max-width: 420px;
 }
-.seo-name-variants {
-  margin: 14px 0 0;
-  max-width: 430px;
-  color: var(--muted-2);
-  font-size: 12px;
-  line-height: 1.7;
-}
 .hero-ctas { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
-
-.identity-block {
-  padding-top: 0;
-}
-.identity-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
-  gap: 28px;
-  align-items: center;
-  padding: 24px 28px;
-  border: 1px solid var(--line-2);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(135deg, rgba(239,244,255,0.82), rgba(255,255,255,0.96) 42%),
-    #fff;
-  box-shadow: var(--shadow-sm);
-}
-.identity-panel .section-label {
-  margin-bottom: 10px;
-}
-.identity-panel h2 {
-  margin: 0 0 10px;
-  color: var(--ink);
-  font-size: 22px;
-  line-height: 1.45;
-  letter-spacing: 0.01em;
-}
-.identity-panel p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-}
-.identity-names {
-  margin: 0;
-  padding: 18px;
-  border: 1px solid rgba(37,99,235,0.12);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.74);
-}
-.identity-names dt {
-  margin-bottom: 12px;
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 800;
-}
-.identity-names dd {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-}
-.identity-names span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 700;
-}
 
 /* hero illustration scaffold (reused on other pages) */
 .illus {
@@ -366,15 +295,16 @@ section.block { padding: 56px 0; }
   font-size: 10px; font-weight: 700;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  color: var(--ink);
+  background: var(--blue);
+  color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   letter-spacing: 0.04em;
   z-index: 2;
-  box-shadow: 0 1px 4px rgba(15,23,42,0.10);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.14);
 }
+.cat-pill.green { background: var(--green); }
+.cat-pill.violet { background: #8B5CF6; }
+.cat-pill.amber { background: #F59E0B; }
 
 /* ============ FILTER TABS ============ */
 .tabs { display: flex; gap: 8px; flex-wrap: wrap; }

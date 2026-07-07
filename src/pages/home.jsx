@@ -1,8 +1,6 @@
 import { Icon } from '../components/Icon.jsx';
-import { CTABanner } from '../components/Layout.jsx';
 import { HeroModel } from '../components/Hero.jsx';
 import { DownloadRow, goTo, SectionLabel, WorkCard } from '../components/PageShared.jsx';
-import { SeoIdentity } from '../components/SeoIdentity.jsx';
 import { DOWNLOADS, PROJECTS } from '../data/content.jsx';
 
 export function HomePage() {
@@ -20,7 +18,6 @@ export function HomePage() {
               使って便利で楽しいと感じれるようなサービスやコンテンツを作ることを掲げ、学習しながら制作活動を行っています。
               このポートフォリオでは、制作物や公開データを通じて、私の考え方とスキルを紹介します。
             </p>
-            <p className="seo-name-variants">新井智己（あらいともき / あらとも / アライトモキ / Tomoki Arai）の制作ポートフォリオです。</p>
             <div className="hero-ctas">
               <a href="#/works" onClick={(e) => { e.preventDefault(); goTo('/works'); }} className="btn btn-primary">作品を見る <Icon.Arrow className="arrow"/></a>
               <a href="#/downloads" onClick={(e) => { e.preventDefault(); goTo('/downloads'); }} className="btn btn-ghost">ダウンロード <Icon.Arrow/></a>
@@ -32,8 +29,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <SeoIdentity />
 
       <section className="block">
         <div className="wrap">
@@ -74,12 +69,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <CTABanner
-        title="一緒に、面白いものをつくりませんか？"
-        sub="制作の相談、作品等への質問、コラボレーションなどお気軽にご連絡ください。"
-        btns={[{ label: 'お問い合わせはこちら', to: '/contact', icon: 'mail' }]}
-      />
     </div>
   );
 }

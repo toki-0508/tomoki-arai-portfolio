@@ -10,11 +10,12 @@ export const SectionLabel = ({ children }) => (
 );
 
 export function WorkCard({ work, index = 1 }) {
+  const pillTone = work.catKey === '3d' ? 'green' : work.catKey === 'app' ? 'violet' : work.catKey === 'other' ? 'amber' : '';
   return (
     <article className={`project-card fade-in d${Math.min(index, 5)}`}>
       <a href={`#/works/${work.id}`} onClick={(e) => { e.preventDefault(); goTo(`/works/${work.id}`); }}>
         <div className="project-thumb">
-          <span className="cat-pill">{work.cat}</span>
+          <span className={`cat-pill ${pillTone}`}>{work.cat}</span>
           {work.thumb}
         </div>
         <div className="project-body">

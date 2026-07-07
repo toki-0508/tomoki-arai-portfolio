@@ -93,7 +93,6 @@
   .feature { grid-template-columns: 48px 1fr; }
   .feature .ico { width: 48px; height: 48px; }
   .category-grid,
-  .identity-panel,
   .about-grid,
   .contact-layout,
   .work-detail-grid,
@@ -152,12 +151,6 @@
   .eyebrow { font-size: 11px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn { width: 100%; }
-  .identity-panel {
-    padding: 22px;
-  }
-  .identity-panel h2 {
-    font-size: 18px;
-  }
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 16px; }
   .shop-features { grid-template-columns: 1fr; padding: 20px; }
   .shop-list .shop-card { grid-template-columns: 1fr; gap: 12px; }
