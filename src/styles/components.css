@@ -332,12 +332,6 @@ section.block { padding: 56px 0; }
   gap: 40px;
 }
 .footer-brand { display: flex; flex-direction: column; gap: 22px; }
-.footer-name-note {
-  margin: -10px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
-}
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
   width: 36px; height: 36px;

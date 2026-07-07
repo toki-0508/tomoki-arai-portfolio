@@ -26,16 +26,40 @@ function buildMailLinks(form) {
 }
 
 export function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', type: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', type: '', message: '', website: '' });
+  const [status, setStatus] = useState({ state: 'idle', message: '' });
   const [copied, setCopied] = useState(false);
   const canSubmit = Boolean(form.name.trim() && form.email.trim() && form.type && form.message.trim());
-  const submit = (e) => {
+
+  const submit = async (e) => {
     e.preventDefault();
     if (!canSubmit) return;
-    const { gmail } = buildMailLinks(form);
-    window.open(gmail, '_blank', 'noopener,noreferrer');
-    setSent(true);
+    setStatus({ state: 'loading', message: '送信しています...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.ok) {
+        setStatus({
+          state: 'error',
+          message: result.message || '送信できませんでした。メールアプリから送信してください。',
+        });
+        return;
+      }
+
+      setStatus({ state: 'success', message: result.message || 'お問い合わせを送信しました。' });
+      setForm({ name: '', email: '', type: '', message: '', website: '' });
+    } catch {
+      setStatus({
+        state: 'error',
+        message: '通信に失敗しました。メールアプリから送信してください。',
+      });
+    }
   };
 
   const copyEmail = async () => {
@@ -49,6 +73,7 @@ export function ContactPage() {
   };
 
   const mailLinks = canSubmit ? buildMailLinks(form) : null;
+  const isSubmitting = status.state === 'loading';
 
   return (
     <div className="page-enter">
@@ -74,17 +99,27 @@ export function ContactPage() {
             </div>
           </div>
           <form className="contact-card" onSubmit={submit}>
+            <input
+              type="text"
+              name="website"
+              value={form.website}
+              onChange={(e) => setForm({ ...form, website: e.target.value })}
+              className="contact-honeypot"
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <div className="field">
               <label htmlFor="contact-name">お名前</label>
-              <input id="contact-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="例）新井 太郎" autoComplete="name" required/>
+              <input id="contact-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="例）新井 太郎" autoComplete="name" disabled={isSubmitting} required/>
             </div>
             <div className="field">
               <label htmlFor="contact-email">メールアドレス</label>
-              <input id="contact-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="例）example@gmail.com" autoComplete="email" required/>
+              <input id="contact-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="例）example@gmail.com" autoComplete="email" disabled={isSubmitting} required/>
             </div>
             <div className="field">
               <label htmlFor="contact-type">お問い合わせの種類</label>
-              <select id="contact-type" value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} required>
+              <select id="contact-type" value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} disabled={isSubmitting} required>
                 <option value="">選択してください</option>
                 <option>制作の相談</option>
                 <option>3Dデータについて</option>
@@ -94,16 +129,24 @@ export function ContactPage() {
             </div>
             <div className="field">
               <label htmlFor="contact-message">メッセージ</label>
-              <textarea id="contact-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="ご相談内容をご記入ください" required/>
+              <textarea id="contact-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="ご相談内容をご記入ください" disabled={isSubmitting} required/>
             </div>
-            <button type="submit" className="submit-btn" disabled={!canSubmit}>
-              {sent ? 'Gmail作成画面を開きました' : 'Gmailで送信内容を作成する'}
+            <button type="submit" className="submit-btn" disabled={!canSubmit || isSubmitting}>
+              {isSubmitting ? '送信中...' : '送信する'}
               <Icon.Send/>
             </button>
-            {mailLinks && (
+            {status.message && (
+              <div className={`contact-status ${status.state}`} role="status" aria-live="polite">
+                {status.message}
+              </div>
+            )}
+            {(mailLinks || status.state === 'error') && (
               <div className="contact-fallback" aria-live="polite">
-                <p>Gmailが開かない場合はこちらから送信できます。</p>
-                <a href={mailLinks.mailto}>メールアプリで開く</a>
+                <p>うまく送れない場合はこちらから送信できます。</p>
+                <div className="contact-fallback-links">
+                  {mailLinks ? <a href={mailLinks.mailto}>メールアプリで開く</a> : null}
+                  {mailLinks ? <a href={mailLinks.gmail} target="_blank" rel="noreferrer">Gmailで開く</a> : null}
+                </div>
               </div>
             )}
           </form>
