@@ -72,7 +72,7 @@ export function Footer() {
       <div className="wrap footer-grid">
         <div className="footer-brand">
           <Logo />
-          <p className="footer-name-note">新井智己（あらいともき / Tomoki Arai）のポートフォリオ</p>
+          <p className="footer-name-note">新井智己（あらいともき / あらとも / アライトモキ / Tomoki Arai）のポートフォリオ</p>
           <div className="footer-socials">
             <a href="#x" aria-label="X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -125,17 +125,13 @@ export function CTABanner({ title, sub, btns }) {
       <div className="wrap">
         <div className="cta-banner">
           <div className="cta-left">
-            <div className="cta-icon">
-              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="m22 2-11 11"/>
-              </svg>
-            </div>
             <div>
+              <span className="cta-kicker">CONTACT</span>
               <h3 className="cta-h">{title}</h3>
               <p className="cta-p">{sub}</p>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: 12, position: 'relative', zIndex: 1, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {btns.map((b, i) => (
               <a key={i} href={`#${b.to}`} onClick={(e) => go(e, b.to)} className="cta-btn">
                 {b.label} {b.icon === 'mail' ? <Icon.Mail/> : <Icon.Arrow className="arrow"/>}
@@ -147,4 +143,3 @@ export function CTABanner({ title, sub, btns }) {
     </section>
   );
 }
-

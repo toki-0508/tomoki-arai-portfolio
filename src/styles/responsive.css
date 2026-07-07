@@ -93,6 +93,7 @@
   .feature { grid-template-columns: 48px 1fr; }
   .feature .ico { width: 48px; height: 48px; }
   .category-grid,
+  .identity-panel,
   .about-grid,
   .contact-layout,
   .work-detail-grid,
@@ -118,32 +119,10 @@
     gap: 14px;
     padding: 28px 0 0;
   }
-  .mvv-orbit {
-    inset: auto;
-    left: 50%;
-    top: 92px;
-    width: min(340px, 94vw);
-    height: 250px;
-    transform: translateX(-50%) rotate(-9deg);
-  }
-  .mvv-orbit-two {
-    inset: auto;
-    left: 50%;
-    top: 122px;
-    width: min(260px, 70vw);
-    height: 190px;
-    transform: translateX(-50%) rotate(17deg);
-  }
   .mvv-core {
-    position: relative;
-    left: auto;
-    top: auto;
     grid-row: auto;
-    justify-self: center;
-    width: 120px;
-    height: 120px;
+    justify-self: start;
     margin: 0 0 4px;
-    transform: rotate(45deg);
   }
   .mvv-card {
     position: relative;
@@ -173,6 +152,12 @@
   .eyebrow { font-size: 11px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn { width: 100%; }
+  .identity-panel {
+    padding: 22px;
+  }
+  .identity-panel h2 {
+    font-size: 18px;
+  }
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 16px; }
   .shop-features { grid-template-columns: 1fr; padding: 20px; }
   .shop-list .shop-card { grid-template-columns: 1fr; gap: 12px; }
@@ -228,28 +213,11 @@
   .mvv-visual {
     padding-top: 18px;
   }
-  .mvv-orbit {
-    left: 50%;
-    top: 72px;
-    width: min(300px, 92vw);
-    height: 220px;
-  }
-  .mvv-orbit-two {
-    left: 50%;
-    top: 102px;
-    width: min(220px, 68vw);
-    height: 160px;
-  }
-  .mvv-core {
-    width: 96px;
-    height: 96px;
-    border-radius: 26px;
-  }
   .mvv-core span {
-    font-size: 22px;
+    font-size: 32px;
   }
   .mvv-core strong {
-    font-size: 9px;
+    font-size: 10px;
   }
   .mvv-card {
     padding: 18px 20px;

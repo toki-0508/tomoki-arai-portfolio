@@ -10,19 +10,18 @@ export const SectionLabel = ({ children }) => (
 );
 
 export function WorkCard({ work, index = 1 }) {
-  const pillTone = work.catKey === '3d' ? 'green' : work.catKey === 'app' ? 'violet' : work.catKey === 'other' ? 'amber' : '';
   return (
     <article className={`project-card fade-in d${Math.min(index, 5)}`}>
       <a href={`#/works/${work.id}`} onClick={(e) => { e.preventDefault(); goTo(`/works/${work.id}`); }}>
         <div className="project-thumb">
-          <span className={`cat-pill ${pillTone}`}>{work.cat}</span>
+          <span className="cat-pill">{work.cat}</span>
           {work.thumb}
         </div>
         <div className="project-body">
           <h3 className="project-name">{work.name}</h3>
           <p className="project-desc">{work.desc}</p>
           <div className="card-bottom">
-            <div className="tags">{work.tags.slice(0, 4).map(([tag, color], i) => <span key={i} className={`tag ${color === 'blue' ? '' : color}`}>{tag}</span>)}</div>
+            <div className="tags">{work.tags.slice(0, 4).map(([tag], i) => <span key={i} className="tag">{tag}</span>)}</div>
             <Icon.Arrow/>
           </div>
         </div>
@@ -47,7 +46,7 @@ export function DownloadRow({ file }) {
       <span className="download-meta">{file.size}</span>
       <span className="download-meta">{file.date}</span>
       <a className="download-button" href={href} download={downloadName} aria-label={`${file.name}をダウンロード`}>
-        ↓
+        <Icon.Download/>
       </a>
     </article>
   );

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Icon } from '../components/Icon.jsx';
 import { WorkCard } from '../components/PageShared.jsx';
 import { PROJECT_CATEGORIES, PROJECTS } from '../data/content.jsx';
 
@@ -22,7 +23,7 @@ export function WorksPage() {
         <div className="wrap grid-3">
           {works.length > 0 ? works.map((work, i) => <WorkCard key={work.id} work={work} index={i + 1}/>) : (
             <div className="empty-state">
-              <div className="empty-mark">◇</div>
+              <div className="empty-mark"><Icon.Box/></div>
               <strong>まだ何もないようです</strong>
               <span>このカテゴリの作品は準備中です。近日公開予定です。</span>
             </div>

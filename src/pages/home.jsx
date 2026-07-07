@@ -2,6 +2,7 @@ import { Icon } from '../components/Icon.jsx';
 import { CTABanner } from '../components/Layout.jsx';
 import { HeroModel } from '../components/Hero.jsx';
 import { DownloadRow, goTo, SectionLabel, WorkCard } from '../components/PageShared.jsx';
+import { SeoIdentity } from '../components/SeoIdentity.jsx';
 import { DOWNLOADS, PROJECTS } from '../data/content.jsx';
 
 export function HomePage() {
@@ -19,7 +20,7 @@ export function HomePage() {
               使って便利で楽しいと感じれるようなサービスやコンテンツを作ることを掲げ、学習しながら制作活動を行っています。
               このポートフォリオでは、制作物や公開データを通じて、私の考え方とスキルを紹介します。
             </p>
-            <p className="seo-name-variants">新井智己（あらいともき / アライトモキ / Tomoki Arai）の制作ポートフォリオです。</p>
+            <p className="seo-name-variants">新井智己（あらいともき / あらとも / アライトモキ / Tomoki Arai）の制作ポートフォリオです。</p>
             <div className="hero-ctas">
               <a href="#/works" onClick={(e) => { e.preventDefault(); goTo('/works'); }} className="btn btn-primary">作品を見る <Icon.Arrow className="arrow"/></a>
               <a href="#/downloads" onClick={(e) => { e.preventDefault(); goTo('/downloads'); }} className="btn btn-ghost">ダウンロード <Icon.Arrow/></a>
@@ -31,6 +32,8 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      <SeoIdentity />
 
       <section className="block">
         <div className="wrap">
@@ -47,12 +50,12 @@ export function HomePage() {
       <section className="block category-band">
         <div className="wrap category-grid">
           {[
-            ['Web', '制作実績を見る', '/works'],
-            ['App', 'アプリ開発を見る', '/works'],
-            ['3D', '3Dモデルを見る', '/works'],
-          ].map(([title, desc, path], i) => (
+            ['Web', '制作実績を見る', '/works', Icon.Monitor],
+            ['App', 'アプリ開発を見る', '/works', Icon.Smartphone],
+            ['3D', '3Dモデルを見る', '/works', Icon.Box],
+          ].map(([title, desc, path, Ico], i) => (
             <a key={title} href={`#${path}`} onClick={(e) => { e.preventDefault(); goTo(path); }} className={`category-link fade-in d${i + 1}`}>
-              <span className="category-icon">{title === 'Web' ? '⌘' : title === 'App' ? '▯' : '◇'}</span>
+              <span className="category-icon"><Ico/></span>
               <span><strong>{title}</strong><small>{desc}</small></span>
               <Icon.Arrow/>
             </a>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Icon } from '../components/Icon.jsx';
 import { DownloadRow } from '../components/PageShared.jsx';
 import { DOWNLOAD_CATEGORIES, DOWNLOADS } from '../data/content.jsx';
 
@@ -21,7 +22,7 @@ export function DownloadsPage() {
         <div className="wrap download-list">
           {files.length > 0 ? files.map((file) => <DownloadRow key={file.id} file={file}/>) : (
             <div className="empty-state">
-              <div className="empty-mark">↓</div>
+              <div className="empty-mark"><Icon.Download/></div>
               <strong>まだ何もないようです</strong>
               <span>このカテゴリの公開データは準備中です。近日公開予定です。</span>
             </div>

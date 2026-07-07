@@ -141,14 +141,7 @@ const LazyHeroModel = lazy(() => import('./HeroModel.jsx'));
 function HeroModelFallback() {
   return (
     <div className="illus hero-model" aria-hidden="true">
-      <svg className="orbit" viewBox="0 0 600 540" preserveAspectRatio="none">
-        <ellipse cx="300" cy="270" rx="290" ry="200" className="orbit-path"/>
-        <ellipse cx="300" cy="270" rx="240" ry="240" className="orbit-path" transform="rotate(20 300 270)"/>
-        <circle cx="40" cy="280" r="4" className="dot"/>
-        <circle cx="560" cy="180" r="4" className="dot"/>
-        <circle cx="120" cy="80" r="3" className="dot"/>
-        <circle cx="500" cy="430" r="4" className="dot"/>
-      </svg>
+      <div className="model-backdrop"></div>
       <div className="model-canvas"></div>
     </div>
   );

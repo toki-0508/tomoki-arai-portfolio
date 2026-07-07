@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">新井智己 | Tomoki Arai Portfolio</title>
-  <desc id="desc">新井智己のポートフォリオサイトのSNS共有用画像</desc>
+  <desc id="desc">新井智己（あらいともき / あらとも / アライトモキ）のポートフォリオサイトのSNS共有用画像</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#f8fbff"/>
@@ -27,7 +27,7 @@
   <rect x="1000" y="380" width="54" height="54" rx="14" fill="#ffffff" stroke="#bfdbfe" stroke-width="3"/>
   <g fill="#0f172a">
     <text x="86" y="155" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="34" font-weight="700">新井智己</text>
-    <text x="86" y="205" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="22" fill="#64748b">あらいともき / Tomoki Arai</text>
+    <text x="86" y="205" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="22" fill="#64748b">あらいともき / あらとも / Tomoki Arai</text>
     <text x="86" y="318" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="58" font-weight="900">Web、アプリ、3Dを活用し</text>
     <text x="86" y="398" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="58" font-weight="900">面白いを形にする</text>
     <text x="86" y="490" font-family="Arial, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="24" fill="#64748b">Portfolio / Works / MVV / Downloads</text>

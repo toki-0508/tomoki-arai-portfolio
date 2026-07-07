@@ -18,7 +18,7 @@ export function WorkDetailPage({ id }) {
               <h2>特徴</h2>
               <ul>{work.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
               <h2>使用技術</h2>
-              <div className="tags">{work.tags.map(([tag, color]) => <span key={tag} className={`tag ${color === 'blue' ? '' : color}`}>{tag}</span>)}</div>
+              <div className="tags">{work.tags.map(([tag]) => <span key={tag} className="tag">{tag}</span>)}</div>
             </div>
             <div className="work-main-visual">{work.thumb}</div>
           </div>

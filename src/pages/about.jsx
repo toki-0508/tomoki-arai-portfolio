@@ -1,3 +1,4 @@
+import { Icon } from '../components/Icon.jsx';
 import { SectionLabel } from '../components/PageShared.jsx';
 
 export function AboutPage() {
@@ -19,10 +20,10 @@ export function AboutPage() {
     },
   ];
   const interests = [
-    ['つくること', 'アイデアを形にするのが好きです。', '□'],
-    ['あそぶこと', '作ったものを自分で触って試すのが好きです。', '↖'],
-    ['3Dと空間表現', '思ったものを簡単に形にできるのが好きです。', '◇'],
-    ['データ・仕組み', 'AIと一緒に最適解を導き出すのが楽しいです。', '▥'],
+    ['つくること', 'アイデアを形にするのが好きです。', Icon.PenTool],
+    ['あそぶこと', '作ったものを自分で触って試すのが好きです。', Icon.Play],
+    ['3Dと空間表現', '思ったものを簡単に形にできるのが好きです。', Icon.Box],
+    ['データ・仕組み', 'AIと一緒に最適解を導き出すのが楽しいです。', Icon.Chart],
   ];
   const skillGroups = [
     ['Frontend', ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Three.js', 'Tailwind CSS']],
@@ -57,11 +58,9 @@ export function AboutPage() {
           </div>
           <div className="fade-in d2">
             <div className="mvv-visual" aria-label="Mission Vision Values">
-              <div className="mvv-orbit mvv-orbit-one"></div>
-              <div className="mvv-orbit mvv-orbit-two"></div>
               <div className="mvv-core">
                 <span>MVV</span>
-                <strong>Tomoki Arai</strong>
+                <strong>Mission / Vision / Values</strong>
               </div>
               {mvvItems.map((item, index) => (
                 <article key={item.label} className={`mvv-card mvv-card-${index + 1}`}>
@@ -80,9 +79,9 @@ export function AboutPage() {
           <div>
             <SectionLabel>好きなこと</SectionLabel>
             <div className="interest-grid">
-              {interests.map(([title, desc, icon]) => (
+              {interests.map(([title, desc, Ico]) => (
                 <div key={title} className="interest-item">
-                  <div className="interest-icon">{icon}</div>
+                  <div className="interest-icon"><Ico/></div>
                   <h3>{title}</h3>
                   <p>{desc}</p>
                 </div>
