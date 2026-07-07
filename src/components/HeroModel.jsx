@@ -94,12 +94,15 @@ export default function HeroModelCanvas() {
     const key = new THREE.DirectionalLight(0xffffff, 0.95); key.position.set(5, 6, 8); scene.add(key);
     const fill = new THREE.DirectionalLight(0x9db4ff, 0.6); fill.position.set(-6, -3, -4); scene.add(fill);
 
-    // controls: drag to rotate + gentle auto-rotate
+    // controls: drag to rotate, wheel/pinch to zoom + gentle auto-rotate
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
-    controls.enableZoom = false;
+    controls.enableZoom = true;
     controls.enablePan = false;
+    controls.minDistance = 6.2;
+    controls.maxDistance = 12.5;
+    controls.zoomSpeed = 0.8;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 1.1;
     controls.rotateSpeed = 0.85;
@@ -162,4 +165,3 @@ export default function HeroModelCanvas() {
     </div>
   );
 }
-

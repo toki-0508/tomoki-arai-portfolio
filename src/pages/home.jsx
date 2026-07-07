@@ -27,7 +27,7 @@ export function HomePage() {
           </div>
           <div className="fade-in d2 hero-visual-wrap">
             <HeroModel/>
-            <div className="drag-hint">ドラッグして回転</div>
+            <div className="drag-hint">ドラッグで回転・ピンチで拡大縮小</div>
           </div>
         </div>
       </section>
