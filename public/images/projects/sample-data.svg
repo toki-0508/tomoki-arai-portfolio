@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Sample data download preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <rect x="190" y="190" width="660" height="500" rx="34" fill="#ffffff" stroke="#dbeafe" stroke-width="6"/>
+  <rect x="280" y="500" width="70" height="90" rx="16" fill="#bfdbfe"/>
+  <rect x="410" y="430" width="70" height="160" rx="16" fill="#60a5fa"/>
+  <rect x="540" y="350" width="70" height="240" rx="16" fill="#2563eb"/>
+  <rect x="670" y="280" width="70" height="310" rx="16" fill="#93c5fd"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Quote web preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <rect x="170" y="210" width="700" height="460" rx="40" fill="#ffffff" stroke="#dbeafe" stroke-width="6"/>
+  <text x="260" y="390" font-family="Arial, sans-serif" font-size="128" font-weight="700" fill="#bfdbfe">"</text>
+  <rect x="330" y="342" width="390" height="30" rx="15" fill="#2563eb"/>
+  <rect x="330" y="406" width="310" height="24" rx="12" fill="#93c5fd"/>
+  <rect x="330" y="458" width="240" height="24" rx="12" fill="#dbeafe"/>
+  <circle cx="742" cy="530" r="34" fill="#60a5fa"/>
+</svg>

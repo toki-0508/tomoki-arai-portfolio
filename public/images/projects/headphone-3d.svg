@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Headphone 3D download preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <path d="M330 448c0-126 84-216 190-216s190 90 190 216" fill="none" stroke="#2563eb" stroke-width="34" stroke-linecap="round"/>
+  <rect x="270" y="420" width="110" height="190" rx="42" fill="#dbeafe" stroke="#93c5fd" stroke-width="6"/>
+  <rect x="660" y="420" width="110" height="190" rx="42" fill="#dbeafe" stroke="#93c5fd" stroke-width="6"/>
+  <circle cx="520" cy="520" r="56" fill="#bfdbfe"/>
+</svg>

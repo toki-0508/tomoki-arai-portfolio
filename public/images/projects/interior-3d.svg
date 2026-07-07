@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Interior 3D download preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <rect x="270" y="500" width="420" height="64" rx="22" fill="#bfdbfe"/>
+  <rect x="310" y="340" width="250" height="190" rx="44" fill="#ffffff" stroke="#dbeafe" stroke-width="6"/>
+  <rect x="610" y="376" width="140" height="140" rx="70" fill="#eff6ff" stroke="#93c5fd" stroke-width="6"/>
+  <rect x="692" y="520" width="24" height="122" rx="12" fill="#93c5fd"/>
+</svg>

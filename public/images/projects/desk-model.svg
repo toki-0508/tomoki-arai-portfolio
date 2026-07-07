@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Desk 3D model preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <rect x="245" y="240" width="550" height="300" rx="30" fill="#ffffff" stroke="#dbeafe" stroke-width="6"/>
+  <rect x="320" y="304" width="400" height="170" rx="20" fill="#e0f2fe"/>
+  <rect x="478" y="540" width="84" height="90" rx="12" fill="#bfdbfe"/>
+  <rect x="360" y="640" width="320" height="30" rx="15" fill="#2563eb"/>
+  <rect x="250" y="684" width="540" height="44" rx="16" fill="#dbeafe"/>
+</svg>

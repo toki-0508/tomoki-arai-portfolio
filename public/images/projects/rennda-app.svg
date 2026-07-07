@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="880" viewBox="0 0 1040 880" role="img" aria-labelledby="title">
+  <title id="title">Auto click tool preview</title>
+  <rect width="1040" height="880" fill="#f8fbff"/>
+  <rect x="215" y="190" width="610" height="500" rx="36" fill="#ffffff" stroke="#dbeafe" stroke-width="6"/>
+  <circle cx="520" cy="408" r="120" fill="#eff6ff" stroke="#2563eb" stroke-width="8"/>
+  <path d="M492 322 610 438 548 450 578 524 530 542 500 468 452 512z" fill="#2563eb"/>
+  <rect x="330" y="582" width="380" height="34" rx="17" fill="#bfdbfe"/>
+</svg>
