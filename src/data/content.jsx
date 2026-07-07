@@ -10,6 +10,7 @@ export const PROJECT_CATEGORIES = [
 
 export const DOWNLOAD_CATEGORIES = [
   { id: 'all', label: 'All' },
+  { id: 'app', label: 'App' },
   { id: '3d', label: '3D Models' },
   { id: 'templates', label: 'Templates' },
   { id: 'assets', label: 'Assets' },
@@ -104,7 +105,7 @@ export const PROJECTS = [
     catKey: 'web', 
     desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。', 
     tags: ['Flutter', 'Dart', 'Firebase'], 
-    image: '/images/projects/kakeibo-app.svg',
+    image: '/images/projects/kakeibo-app.png',
     year: '2026.06', 
     overview: '毎日の家計簿を簡単に管理できる多機能な家計簿サービスです', 
     features: ['家計簿の作成・編集・完了管理', 'スマホで見やすいレイアウト'] 
@@ -115,7 +116,7 @@ export const PROJECTS = [
     catKey: '3d', 
     desc: 'Blenderで制作したゲーミングデスクとモニターです。', 
     tags: [['Blender', 'green']], 
-    image: '/images/projects/desk-model.svg',
+    image: '/images/projects/desk-model.png',
     year: '2024.09', 
     overview: 'Blenderの練習として自分が好きなゲーム関連でデスク周りを作成してみました。', 
     features: ['Blenderによるモデリング'] 
@@ -126,7 +127,7 @@ export const PROJECTS = [
     catKey: 'web', 
     desc: '毎日ランダムな名言が1個表示されるサイト', 
     tags: [['API', 'violet'], ['Firebase', 'violet'], ['JS', 'violet']], 
-    image: '/images/projects/kyounomeigen-web.svg',
+    image: '/images/projects/kyounomeigen-web.png',
     year: '2025.10', 
     overview: '思いつきで作った名言が1日一個取り上げられているサイトで偉人やアニメ、漫画から選ばれた有名な名言を紹介しています。', 
     features: ['API利用'] 
@@ -137,7 +138,7 @@ export const PROJECTS = [
     catKey: 'app', 
     desc: 'シンプルかつパソコンに負担がかかりづらい使いやすい連打ツールです', 
     tags: [['Python','green']], 
-    image: '/images/projects/rennda-app.svg',
+    image: '/images/projects/rennda-app.png',
     year: '2025.06', 
     overview: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。', 
     features: ['自動ツール'] 
@@ -148,7 +149,7 @@ export const PROJECTS = [
     catKey: 'web', 
     desc: '事業アイデアをメモすることに特化したメモアプリで項目に沿って埋めるだけで価値あるアイデアにまとめることができます', 
     tags: [['Flutter', 'amber'], ['dart', 'amber'], ['Firebase', 'amber']], 
-    image: '/images/projects/jigyomemo-web.svg',
+    image: '/images/projects/jigyomemo-web.png',
     year: '2026.5', 
     overview: '事業アイデアをメモすることに特化していて現在のレベル感に合わせてアイデアをメモすることでフレームワークを活用することにより具体的に事業計画的にまとめることができます', 
     features: ['誰でもわかりやすいUI'] 
@@ -157,14 +158,14 @@ export const PROJECTS = [
 
 export const DOWNLOADS = [
   defineDownload({ 
-    id: 'interior-3d', 
-    name: 'インテリア3Dモデルセット', 
-    category: '3d', 
+    id: 'rennda-app', 
+    name: '自動連打ツール', 
+    category: 'app', 
     size: '12.4 MB', 
-    date: '2026.06.20', 
-    desc: 'インテリアシーンで使える3Dモデルのセット。椅子、テーブル、小物類を含みます。', 
-    image: '/images/projects/interior-3d.svg',
-    file: '/downloads/interior-3d.txt',
+    date: '2025.06', 
+    desc: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。', 
+    image: '/images/projects/rennda-app.png',
+    file: '/downloads/AutoClicker.zip',
   }),
   defineDownload({ 
     id: 'headphone-3d', 
@@ -175,17 +176,6 @@ export const DOWNLOADS = [
     desc: 'ヘッドホンの3Dモデルです。テクスチャ付きのプレビュー用データを含みます。', 
     image: '/images/projects/headphone-3d.svg',
     file: '/downloads/headphone-3d.txt',
-  }),
-  defineDownload({ 
-    id: 'portfolio-template', 
-    name: 'ポートフォリオテンプレート', 
-    category: 'templates', 
-    kind: 'Template', 
-    size: '2.1 MB', 
-    date: '2026.06.10', 
-    desc: 'このポートフォリオサイトの構成をもとにしたテンプレートです。', 
-    image: '/images/projects/portfolio-template.svg',
-    file: '/downloads/portfolio-template.txt',
   }),
   defineDownload({ 
     id: 'sample-data', 
