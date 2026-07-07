@@ -91,9 +91,9 @@ export const PROJECTS = [
   defineProject({ id: 'kakeibo-app', name: '便利な家計簿！', catKey: 'web', desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。', tags: ['Flutter', 'Dart', 'Firebase'], thumbKey: 'habit', year: '2026.06', overview: '毎日の家計簿を簡単に管理できる多機能な家計簿サービスです', features: ['家計簿の作成・編集・完了管理', 'スマホで見やすいレイアウト'] }),
   defineProject({ id: 'desk-model', name: '3Dデスク周りモデル', catKey: '3d', desc: 'Blenderで制作したゲーミングデスクとモニターです。', tags: [['Blender', 'green']], thumbKey: 'studio', year: '2024.09', overview: 'Blenderの練習として自分が好きなゲーム関連でデスク周りを作成してみました。', features: ['Blenderによるモデリング'] }),
   defineProject({ id: 'kyounomeigen.web', name: '今日の名言.web', catKey: 'web', desc: '毎日ランダムな名言が1個表示されるサイト', tags: [['API', 'violet'], ['Firebase', 'violet'], ['JS', 'violet']], thumbKey: 'pomotree', year: '2025.10', overview: '思いつきで作った名言が1日一個取り上げられているサイトで偉人やアニメ、漫画から選ばれた有名な名言を紹介しています。', features: ['API利用'] }),
-  defineProject({ id: 'product-model', name: 'プロダクト3Dモデル', catKey: '3d', desc: 'ヘッドホンを題材にしたプロダクト3Dモデル。リアルな質感表現に挑戦しました。', tags: [['Blender', 'green'], ['Substance', 'green'], ['GLB', 'green']], thumbKey: 'camera', year: '2026.02', overview: 'プロダクトデザインの練習として制作した3Dモデルです。形状の読みやすさと質感の説得力を重視しました。', features: ['曲面モデリング', 'マテリアル調整', 'Web掲載向けレンダリング'] }),
+  defineProject({ id: 'rennda-app', name: '自動連打ツール', catKey: 'app', desc: 'シンプルかつパソコンに負担がかかりづらい使いやすい連打ツールです', tags: [['Python','green']], thumbKey: 'camera', year: '2025.06', overview: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。', features: ['自動ツール'] }),
   defineProject({ id: 'data-visualizer', name: 'データ可視化ツール', catKey: 'other', desc: 'CSVデータを読み取り、グラフで傾向を見やすく整理する実験的なツール。', tags: [['JavaScript', 'amber'], ['Chart.js', 'amber'], ['CSV', 'amber']], thumbKey: 'dataViz', year: '2025.12', overview: '表形式のデータを視覚的に確認できるツールです。情報を整理し、判断しやすくするUIを意識しました。', features: ['CSV読み込み', 'グラフ表示', '小さな画面でも読めるUI'] }),
-];
+]
 
 export const DOWNLOADS = [
   defineDownload({ id: 'interior-3d', name: 'インテリア3Dモデルセット', category: '3d', size: '12.4 MB', date: '2026.06.20', desc: 'インテリアシーンで使える3Dモデルのセット。椅子、テーブル、小物類を含みます。', thumbKey: 'studio' }),
