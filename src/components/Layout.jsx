@@ -116,30 +116,3 @@ export function Footer() {
     </footer>
   );
 }
-
-// ========== CTA BANNER ==========
-export function CTABanner({ title, sub, btns }) {
-  const go = (e, id) => { e.preventDefault(); window.location.hash = id; window.scrollTo({ top: 0, behavior: 'auto' }); };
-  return (
-    <section className="block">
-      <div className="wrap">
-        <div className="cta-banner">
-          <div className="cta-left">
-            <div>
-              <span className="cta-kicker">CONTACT</span>
-              <h3 className="cta-h">{title}</h3>
-              <p className="cta-p">{sub}</p>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            {btns.map((b, i) => (
-              <a key={i} href={`#${b.to}`} onClick={(e) => go(e, b.to)} className="cta-btn">
-                {b.label} {b.icon === 'mail' ? <Icon.Mail/> : <Icon.Arrow className="arrow"/>}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
