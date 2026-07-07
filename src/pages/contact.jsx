@@ -100,12 +100,10 @@ export function ContactPage() {
           </div>
           <form className="contact-card" onSubmit={submit}>
             <input
-              type="text"
+              type="hidden"
               name="website"
               value={form.website}
-              onChange={(e) => setForm({ ...form, website: e.target.value })}
               className="contact-honeypot"
-              tabIndex="-1"
               autoComplete="off"
               aria-hidden="true"
             />

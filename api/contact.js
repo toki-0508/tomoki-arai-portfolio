@@ -30,7 +30,7 @@ async function readJsonBody(request) {
 
   const chunks = [];
   for await (const chunk of request) {
-    chunks.push(chunk);
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
   }
 
   const bodyText = Buffer.concat(chunks).toString('utf8');
