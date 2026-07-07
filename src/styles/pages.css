@@ -806,3 +806,36 @@
 .contact-info p { margin: 0; }
 .contact-info strong { color: var(--ink); }
 .contact-info a { color: var(--blue); font-weight: 700; }
+.contact-info-row {
+  display: grid;
+  gap: 8px;
+}
+.email-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.contact-helper {
+  color: var(--muted-2);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.contact-fallback {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.contact-fallback p {
+  margin: 0 0 8px;
+}
+.contact-fallback a {
+  display: inline-flex;
+  color: var(--blue);
+  font-weight: 700;
+}
