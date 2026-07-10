@@ -10,13 +10,13 @@ export function AboutPage() {
     },
     {
       label: 'Vision',
-      title: 'アイデアがすぐ試せる世界をつくる',
-      text: '思いついたことを画面や空間の中で素早く試し、人に見せ、改善できる。そんな制作の循環を自分の手で広げていきたいです。',
+      title: '全てのものに愛着が持てる社会を作る',
+      text: '身の回りにあるものにはこだわって欲しいしそれを好きになるということはとても幸せでQOLが高くてより幸せな世界だと思います。',
     },
     {
       label: 'Values',
       title: 'わかりやすく、気持ちよく、続けて磨く',
-      text: '見た目の良さだけでなく、使う人が迷わないこと、触って心地よいこと、作った後も育て続けられることを大切にします。',
+      text: '見た目の良さだけでなく、使う人が迷わないこと、触って心地よいこと、作った後も使い続けられることを大切にします。',
     },
   ];
   const interests = [
@@ -48,7 +48,7 @@ export function AboutPage() {
             <h1 className="h-display about-title">つくる理由を、いつも近くに置く。</h1>
             <p className="h-body">
               ただ動くものを作るだけではなく、誰かが「使ってよかった」と感じられる体験に近づけたい。
-              そのために、Mission / Vision / Values を小さな判断軸として持ちながら、Web・アプリ・3Dを横断して制作しています。
+              そのために、Mission / Vision / Values を小さな判断軸として持ちながら、Web・アプリ・3Dを制作しています。
             </p>
             <div className="mvv-points" aria-label="制作で大切にしている軸">
               <span>Touch</span>
