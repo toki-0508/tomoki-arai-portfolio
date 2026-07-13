@@ -9,7 +9,7 @@ export function HomePage() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="fade-in">
-            <SectionLabel>Concept</SectionLabel>
+            <SectionLabel>Hello! I'm Arai Tomoki</SectionLabel>
             <h1 className="h-display">
               <span className="line">Web、アプリ、3Dを活用し</span>
               <span className="line">面白いを形にする</span>
