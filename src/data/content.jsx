@@ -169,7 +169,7 @@ export const DOWNLOADS = [
   defineDownload({
     id: 'nightbell',
     name: 'NightBell',
-    category: 'Sounds',
+    category: 'sounds',
     size: '81.7 MB',
     date: '2025.09',
     desc: 'garagebandを使って初めて作ったジングル？BGM？みたいなものです。',
