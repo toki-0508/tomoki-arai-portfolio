@@ -47,7 +47,7 @@ export function ContactPage() {
       if (!response.ok || !result.ok) {
         setStatus({
           state: 'error',
-          message: result.message || '送信できませんでした。メールアプリから送信してください。',
+          message: result.message || '送信ができなかったため、メールアプリから送信お願いします。',
         });
         return;
       }
@@ -57,7 +57,7 @@ export function ContactPage() {
     } catch {
       setStatus({
         state: 'error',
-        message: '通信に失敗しました。メールアプリから送信してください。',
+        message: '通信に失敗してしまったため、メールアプリから送信お願いします。',
       });
     }
   };
@@ -96,6 +96,7 @@ export function ContactPage() {
               </div>
               <p><strong>Location</strong><br/>Japan</p>
               <p><strong>GitHub</strong><br/><a href="https://github.com/toki-0508" target="_blank" rel="noreferrer">github.com/toki-0508</a></p>
+              <p><strong>X</strong><br/><a href="https://x.com/zeno_arai" target="_blank" rel="noreferrer">x.com/zeno_arai</a></p>
             </div>
           </div>
           <form className="contact-card" onSubmit={submit}>

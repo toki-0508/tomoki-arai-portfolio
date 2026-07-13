@@ -5,8 +5,8 @@ export function AboutPage() {
   const mvvItems = [
     {
       label: 'Mission',
-      title: '身近な不便を、触って楽しい体験に変える',
-      text: '日常の中にある小さな困りごとや退屈を、Web・アプリ・3Dの力で使いやすく、少しワクワクする形にしていきます。',
+      title: '身近な不便を、触って楽しいモノに変える',
+      text: '日常の中にある小さな困りごとや退屈を、Web・アプリ・3Dの力で使いやすく、少しでもワクワクするような形にしていきます。',
     },
     {
       label: 'Vision',
@@ -48,7 +48,7 @@ export function AboutPage() {
             <h1 className="h-display about-title">つくる理由を、いつも近くに置く。</h1>
             <p className="h-body">
               ただ動くものを作るだけではなく、誰かが「使ってよかった」と感じられる体験に近づけたい。
-              そのために、Mission / Vision / Values を小さな判断軸として持ちながら、Web・アプリ・3Dを制作しています。
+              そのために、Mission / Vision / Values を判断軸として持ちながら、Web・アプリ・3Dを制作しています。
             </p>
             <div className="mvv-points" aria-label="制作で大切にしている軸">
               <span>Touch</span>

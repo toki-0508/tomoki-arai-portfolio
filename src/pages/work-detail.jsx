@@ -25,7 +25,6 @@ export function WorkDetailPage({ id }) {
           <div className="work-actions">
             <a className="btn btn-ghost" href="#demo" onClick={(e) => e.preventDefault()}>Live Demo <Icon.Arrow/></a>
             <a className="btn btn-ghost" href="#github" onClick={(e) => e.preventDefault()}>GitHub <Icon.Arrow/></a>
-            <a className="btn btn-primary" href="#/downloads" onClick={(e) => { e.preventDefault(); goTo('/downloads'); }}>ダウンロード <Icon.Arrow/></a>
           </div>
         </div>
       </section>

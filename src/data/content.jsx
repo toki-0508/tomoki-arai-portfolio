@@ -12,8 +12,7 @@ export const DOWNLOAD_CATEGORIES = [
   { id: 'all', label: 'All' },
   { id: 'app', label: 'App' },
   { id: '3d', label: '3D Models' },
-  { id: 'templates', label: 'Templates' },
-  { id: 'assets', label: 'Assets' },
+  { id: 'sounds', label: 'Sounds' },
   { id: 'other', label: 'Other' },
 ];
 
@@ -88,83 +87,93 @@ function defineDownload({ category = 'other', kind, tags = [], image, thumbKey, 
 
 // ============ DATA ============
 export const PROJECTS = [
-  defineProject({ 
-    id: 'portfolio-site', 
-    name: 'ポートフォリオサイト', 
-    catKey: 'web', 
-    desc: 'Reactと3D表現を組み合わせた、制作物を伝えるためのポートフォリオサイト(これ)です。', 
-    tags: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'], 
+  defineProject({
+    id: 'portfolio-site',
+    name: 'ポートフォリオサイト',
+    catKey: 'web',
+    desc: 'Reactと3D表現を組み合わせた、制作物を伝えるためのポートフォリオサイト(これ)です。',
+    tags: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'],
     image: '/images/projects/portfolio-site.png',
-    year: '2026.06', 
-    overview: '自分自身の制作物や公開データを整理して見せるためのWebサイトです。白基調のUI、余白、カード、軽いモーションを組み合わせ、作品・ダウンロード・問い合わせまで自然につながる構成にしました。', 
-    features: ['触れる3Dオブジェクト風のヒーロー表現', '作品カードとカテゴリフィルタ', 'ダウンロード導線', 'お問い合わせフォーム'] 
+    year: '2026.06',
+    overview: '自分自身の制作物や公開データを整理して見せるためのWebサイトです。白基調のUI、余白、カード、軽いモーションを組み合わせ、作品・ダウンロード・問い合わせまで自然につながる構成にしました。',
+    features: ['触れる3Dオブジェクト風のヒーロー表現', '作品カードとカテゴリフィルタ', 'ダウンロード導線', 'お問い合わせフォーム']
   }),
-  defineProject({ 
-    id: 'kakeibo-app', 
-    name: '便利な家計簿！', 
-    catKey: 'web', 
-    desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。', 
-    tags: ['Flutter', 'Dart', 'Firebase'], 
+  defineProject({
+    id: 'kakeibo-app',
+    name: '便利な家計簿！',
+    catKey: 'web',
+    desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。',
+    tags: ['Flutter', 'Dart', 'Firebase'],
     image: '/images/projects/kakeibo-app.png',
-    year: '2026.06', 
-    overview: '毎日の家計簿を簡単に管理できる多機能な家計簿サービスです', 
-    features: ['家計簿の作成・編集・完了管理', 'スマホで見やすいレイアウト'] 
+    year: '2026.06',
+    overview: '毎日の家計簿を簡単に管理できる多機能な家計簿サービスです',
+    features: ['家計簿の作成・編集・完了管理', 'スマホで見やすいレイアウト']
   }),
-  defineProject({ 
-    id: 'desk-model', 
-    name: '3Dデスク周りモデル', 
-    catKey: '3d', 
-    desc: 'Blenderで制作したゲーミングデスクとモニターです。', 
-    tags: [['Blender', 'green']], 
+  defineProject({
+    id: 'desk-model',
+    name: '3Dデスク周りモデル',
+    catKey: '3d',
+    desc: 'Blenderで制作したゲーミングデスクとモニターです。',
+    tags: [['Blender', 'green']],
     image: '/images/projects/desk-model.png',
-    year: '2024.09', 
-    overview: 'Blenderの練習として自分が好きなゲーム関連でデスク周りを作成してみました。', 
-    features: ['Blenderによるモデリング'] 
+    year: '2024.09',
+    overview: 'Blenderの練習として自分が好きなゲーム関連でデスク周りを作成してみました。',
+    features: ['Blenderによるモデリング']
   }),
-  defineProject({ 
-    id: 'kyounomeigen-web', 
-    name: '今日の名言.web', 
-    catKey: 'web', 
-    desc: '毎日ランダムな名言が1個表示されるサイト', 
-    tags: [['API', 'violet'], ['Firebase', 'violet'], ['JS', 'violet']], 
+  defineProject({
+    id: 'kyounomeigen-web',
+    name: '今日の名言.web',
+    catKey: 'web',
+    desc: '毎日ランダムな名言が1個表示されるサイト',
+    tags: [['API', 'violet'], ['Firebase', 'violet'], ['JS', 'violet']],
     image: '/images/projects/kyounomeigen-web.png',
-    year: '2025.10', 
-    overview: '思いつきで作った名言が1日一個取り上げられているサイトで偉人やアニメ、漫画から選ばれた有名な名言を紹介しています。', 
-    features: ['API利用'] 
+    year: '2025.10',
+    overview: '思いつきで作った名言が1日一個取り上げられているサイトで偉人やアニメ、漫画から選ばれた有名な名言を紹介しています。',
+    features: ['API利用']
   }),
-  defineProject({ 
-    id: 'rennda-app', 
-    name: '自動連打ツール', 
-    catKey: 'app', 
-    desc: 'シンプルかつパソコンに負担がかかりづらい使いやすい連打ツールです', 
-    tags: [['Python','green']], 
+  defineProject({
+    id: 'rennda-app',
+    name: '自動連打ツール',
+    catKey: 'app',
+    desc: 'シンプルかつパソコンに負担がかかりづらい使いやすい連打ツールです',
+    tags: [['Python','green']],
     image: '/images/projects/rennda-app.png',
-    year: '2025.06', 
-    overview: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。', 
-    features: ['自動ツール'] 
+    year: '2025.06',
+    overview: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。',
+    features: ['自動ツール']
   }),
-  defineProject({ 
-    id: 'jigyomemo-web', 
-    name: 'じぎょメモ', 
-    catKey: 'web', 
-    desc: '事業アイデアをメモすることに特化したメモアプリで項目に沿って埋めるだけで価値あるアイデアにまとめることができます', 
-    tags: [['Flutter', 'amber'], ['dart', 'amber'], ['Firebase', 'amber']], 
+  defineProject({
+    id: 'jigyomemo-web',
+    name: 'じぎょメモ',
+    catKey: 'web',
+    desc: '事業アイデアをメモすることに特化したメモアプリで項目に沿って埋めるだけで価値あるアイデアにまとめることができます',
+    tags: [['Flutter', 'amber'], ['dart', 'amber'], ['Firebase', 'amber']],
     image: '/images/projects/jigyomemo-web.png',
-    year: '2026.5', 
-    overview: '事業アイデアをメモすることに特化していて現在のレベル感に合わせてアイデアをメモすることでフレームワークを活用することにより具体的に事業計画的にまとめることができます', 
-    features: ['誰でもわかりやすいUI'] 
+    year: '2026.5',
+    overview: '事業アイデアをメモすることに特化していて現在のレベル感に合わせてアイデアをメモすることでフレームワークを活用することにより具体的に事業計画的にまとめることができます',
+    features: ['誰でもわかりやすいUI']
   }),
 ];
 
 export const DOWNLOADS = [
-  defineDownload({ 
-    id: 'rennda-app', 
-    name: '自動連打ツール', 
-    category: 'app', 
-    size: '81.7 MB', 
-    date: '2025.06', 
-    desc: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。', 
+  defineDownload({
+    id: 'rennda-app',
+    name: '自動連打ツール',
+    category: 'app',
+    size: '81.7 MB',
+    date: '2025.06',
+    desc: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。',
     image: '/images/projects/rennda-app.png',
     file: '/downloads/AutoClicker.zip',
+  }),
+  defineDownload({
+    id: 'nightbell',
+    name: 'NightBell',
+    category: 'Sounds',
+    size: '81.7 MB',
+    date: '2025.09',
+    desc: 'garagebandを使って初めて作ったジングル？BGM？みたいなものです。',
+    image: '/images/projects/rennda-app.png',
+    file: '/downloads/NightBell.mp3',
   }),
 ];
