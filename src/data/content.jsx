@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { asset } from '../asset.js';
 
 export const PROJECT_CATEGORIES = [
   { id: 'all', label: 'All' },
@@ -41,6 +42,9 @@ function ThumbImage({ image, alt = '' }) {
   );
 }
 
+// image / file は public/ からの素のパスで書いてよい。
+// 公開先ごとのパス解決(asset)はここで済ませる。
+//
 // url: 'https://example.com' -> 詳細ページに「サイトに飛ぶ」ボタンを表示。未設定ならボタンは出ない。
 function defineProject({ catKey = 'other', tags = [], image, alt, url = null, ...project }) {
   return {
@@ -49,7 +53,7 @@ function defineProject({ catKey = 'other', tags = [], image, alt, url = null, ..
     cat: categoryLabel(PROJECT_CATEGORIES, catKey),
     catKey,
     tags: normalizeTags(tags),
-    thumb: <ThumbImage image={image} alt={alt ?? project.name} />,
+    thumb: <ThumbImage image={asset(image)} alt={alt ?? project.name} />,
   };
 }
 
@@ -59,8 +63,8 @@ function defineDownload({ category = 'other', kind, tags = [], image, alt, file 
     category,
     kind: kind ?? categoryLabel(DOWNLOAD_CATEGORIES, category),
     tags: normalizeTags(tags),
-    file,
-    thumb: <ThumbImage image={image} alt={alt ?? download.name} />,
+    file: file ? asset(file) : null,
+    thumb: <ThumbImage image={asset(image)} alt={alt ?? download.name} />,
   };
 }
 

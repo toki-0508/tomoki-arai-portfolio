@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { asset } from '../asset.js';
 
 // ========== INTERACTIVE 3D HERO (Three.js) ==========
 export default function HeroModelCanvas() {
@@ -61,7 +62,7 @@ export default function HeroModelCanvas() {
 
     if (GLTFLoader) {
       new GLTFLoader().load(
-        '/models/hero.glb?v=' + Date.now(),
+        asset('/models/hero.glb') + '?v=' + Date.now(),
         (gltf) => {
           if (disposed) return;
           gltf.scene.traverse((o) => {
