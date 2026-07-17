@@ -1,10 +1,28 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Icon } from './Icon.jsx';
+import { EasterEgg } from './EasterEgg.jsx';
+import { CLICKS_NEEDED, WINDOW_MS } from '../effects/index.js';
 
 // ========== LOGO ==========
-export function Logo({ size = 44 }) {
+// onRapidClicks が渡されたときだけ連打を数える(Nav の Home 表示時のみ)。
+// フッターのロゴは渡さないので、素直なリンクのまま。
+export function Logo({ onRapidClicks }) {
+  const clicks = useRef([]);
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.location.hash = '/';
+    if (!onRapidClicks) return;
+    const now = Date.now();
+    clicks.current = clicks.current.filter((t) => now - t < WINDOW_MS);
+    clicks.current.push(now);
+    if (clicks.current.length >= CLICKS_NEEDED) {
+      clicks.current = [];
+      const box = e.currentTarget.getBoundingClientRect();
+      onRapidClicks({ x: box.left + box.width / 2, y: box.top + box.height / 2 });
+    }
+  };
   return (
-    <a href="#/" className="brand" onClick={(e) => { e.preventDefault(); window.location.hash = '/'; }}>
+    <a href="#/" className="brand" onClick={handleClick}>
       <div className="brand-name">
         <div className="brand-jp">新井智己</div>
         <div className="brand-en">Tomoki Arai</div>
@@ -17,6 +35,7 @@ export function Logo({ size = 44 }) {
 export function Nav({ route }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [eggOrigin, setEggOrigin] = useState(null);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -36,9 +55,10 @@ export function Nav({ route }) {
   const go = (e, id) => { e.preventDefault(); window.location.hash = id; window.scrollTo({ top: 0, behavior: 'auto' }); setOpen(false); };
   return (
     <Fragment>
+      {eggOrigin && <EasterEgg origin={eggOrigin} onDone={() => setEggOrigin(null)} />}
       <header className={`nav ${scrolled ? 'scrolled' : ''} ${open ? 'nav-open' : ''}`}>
         <div className="wrap nav-inner">
-          <Logo />
+          <Logo onRapidClicks={route === '/' ? setEggOrigin : null} />
           <nav className="nav-links desktop-nav">
             {links.map(l => (
               <a key={l.id} href={`#${l.id}`} onClick={(e) => go(e, l.id)} className={`nav-link ${route === l.id ? 'active' : ''}`}>{l.label}</a>
