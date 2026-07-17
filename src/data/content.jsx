@@ -20,15 +20,13 @@ const categoryLabel = (categories, id) => categories.find((category) => category
 const normalizeTags = (tags) => tags.map((tag) => Array.isArray(tag) ? tag : [tag, 'blue']);
 
 
-// ============ UNSPLASH IMG ============
+// ============ THUMB ============
 // image: '/images/projects/sample.png' -> public/images/projects/sample.png
-// unsplash: '1611224885990-ab7363d1f2a9' -> Unsplash fallback image
-function ThumbImage({ image, unsplash, alt = '', w = 600, h = 540, focal }) {
+function ThumbImage({ image, alt = '' }) {
   const [loaded, setLoaded] = useState(false);
-  const src = image ?? `https://images.unsplash.com/photo-${unsplash}?auto=format&fit=crop&w=${w}&h=${h}&q=80${focal ? `&crop=${focal}` : ''}`;
   return (
     <img
-      src={src}
+      src={image}
       alt={alt}
       loading="lazy"
       onLoad={() => setLoaded(true)}
@@ -43,47 +41,26 @@ function ThumbImage({ image, unsplash, alt = '', w = 600, h = 540, focal }) {
   );
 }
 
-// ============ PROJECT THUMBS — Unsplash ============
-const THUMB_PRESETS = {
-  habit: { unsplash: '1611224885990-ab7363d1f2a9', alt: 'habit' },
-  pomotree: { unsplash: '1466692476868-aef1dfb1e735', alt: 'tree' },
-  camera: { unsplash: '1495121605193-b116b5b9c5fe', alt: 'camera' },
-  island: { unsplash: '1469474968028-56623f02e42e', alt: 'island' },
-  dataViz: { unsplash: '1551288049-bebda4e38f71', alt: 'dashboard' },
-  studio: { unsplash: '1620207418302-439b387441b0', alt: '3d' },
-  generative: { unsplash: '1618005182384-a83a8bd57fbe', alt: 'generative' },
-  uiKit: { unsplash: '1559028012-481c04fa702d', alt: 'uikit' },
-  shader: { unsplash: '1614851099511-773084f6911d', alt: 'shader', w: 1040 },
-  photo: { unsplash: '1554080353-a576cf803bda', alt: 'photo', w: 1040 },
-};
-
-function createThumb({ image, thumbKey = 'studio', alt, w = 520, h = 440, focal }) {
-  const preset = THUMB_PRESETS[thumbKey] ?? THUMB_PRESETS.studio;
-  return <ThumbImage {...preset} image={image} alt={alt ?? preset.alt} w={w ?? preset.w} h={h ?? preset.h ?? h} focal={focal ?? preset.focal} />;
-}
-
 // url: 'https://example.com' -> 詳細ページに「サイトに飛ぶ」ボタンを表示。未設定ならボタンは出ない。
-function defineProject({ catKey = 'other', tags = [], image, thumbKey, alt, url = null, ...project }) {
-  const cat = categoryLabel(PROJECT_CATEGORIES, catKey);
+function defineProject({ catKey = 'other', tags = [], image, alt, url = null, ...project }) {
   return {
     ...project,
     url,
-    cat,
+    cat: categoryLabel(PROJECT_CATEGORIES, catKey),
     catKey,
-    badge: project.badge ?? cat,
     tags: normalizeTags(tags),
-    thumb: createThumb({ image, thumbKey, alt: alt ?? project.name }),
+    thumb: <ThumbImage image={image} alt={alt ?? project.name} />,
   };
 }
 
-function defineDownload({ category = 'other', kind, tags = [], image, thumbKey, alt, file = null, ...download }) {
+function defineDownload({ category = 'other', kind, tags = [], image, alt, file = null, ...download }) {
   return {
     ...download,
     category,
     kind: kind ?? categoryLabel(DOWNLOAD_CATEGORIES, category),
     tags: normalizeTags(tags),
     file,
-    thumb: createThumb({ image, thumbKey, alt: alt ?? download.name }),
+    thumb: <ThumbImage image={image} alt={alt ?? download.name} />,
   };
 }
 
