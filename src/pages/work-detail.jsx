@@ -2,8 +2,15 @@ import { Icon } from '../components/Icon.jsx';
 import { goTo } from '../components/PageShared.jsx';
 import { PROJECTS } from '../data/content.jsx';
 
+const FACTS = [
+  { key: 'target', label: 'ターゲット' },
+  { key: 'purpose', label: '目的' },
+  { key: 'result', label: '成果' },
+];
+
 export function WorkDetailPage({ id }) {
   const work = PROJECTS.find((entry) => entry.id === id) || PROJECTS[0];
+  const facts = FACTS.filter(({ key }) => work[key]);
   return (
     <div className="page-enter">
       <section className="work-detail">
@@ -22,6 +29,16 @@ export function WorkDetailPage({ id }) {
             </div>
             <div className="work-main-visual">{work.thumb}</div>
           </div>
+          {facts.length > 0 && (
+            <div className="work-facts">
+              {facts.map(({ key, label }) => (
+                <div key={key} className="work-fact">
+                  <h2>{label}</h2>
+                  <p>{work[key]}</p>
+                </div>
+              ))}
+            </div>
+          )}
           {work.url && (
             <div className="work-actions">
               <a className="btn btn-primary" href={work.url} target="_blank" rel="noopener noreferrer">サイトに飛ぶ <Icon.Arrow/></a>

@@ -3,6 +3,12 @@ import { Icon } from '../components/Icon.jsx';
 
 const CONTACT_EMAIL = 'toki.zeno.0508@gmail.com';
 
+// Vercel(本番)では未設定 → 空文字 → 従来どおり同一オリジンの /api/contact を叩く。
+// GitHub Pages(サブ公開)ではビルド時に Vercel の絶対 URL が入り、そちらへ転送する。
+// GitHub Pages は静的配信のみでサーバー処理を持てないため、この切り替えで
+// どちらの公開先でも問い合わせ体験を同一に保つ。
+const CONTACT_API_BASE = import.meta.env.VITE_CONTACT_API_BASE ?? '';
+
 function buildContactMessage(form) {
   return [
     `お名前: ${form.name.trim()}`,
@@ -37,7 +43,7 @@ export function ContactPage() {
     setStatus({ state: 'loading', message: '送信しています...' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${CONTACT_API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

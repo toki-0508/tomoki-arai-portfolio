@@ -94,6 +94,7 @@
   .about-grid,
   .contact-layout,
   .work-detail-grid,
+  .work-facts,
   .now-panel {
     grid-template-columns: 1fr;
   }
