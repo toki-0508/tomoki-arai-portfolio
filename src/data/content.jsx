@@ -62,10 +62,12 @@ function createThumb({ image, thumbKey = 'studio', alt, w = 520, h = 440, focal 
   return <ThumbImage {...preset} image={image} alt={alt ?? preset.alt} w={w ?? preset.w} h={h ?? preset.h ?? h} focal={focal ?? preset.focal} />;
 }
 
-function defineProject({ catKey = 'other', tags = [], image, thumbKey, alt, ...project }) {
+// url: 'https://example.com' -> 詳細ページに「サイトに飛ぶ」ボタンを表示。未設定ならボタンは出ない。
+function defineProject({ catKey = 'other', tags = [], image, thumbKey, alt, url = null, ...project }) {
   const cat = categoryLabel(PROJECT_CATEGORIES, catKey);
   return {
     ...project,
+    url,
     cat,
     catKey,
     badge: project.badge ?? cat,
@@ -94,6 +96,7 @@ export const PROJECTS = [
     desc: 'Reactと3D表現を組み合わせた、制作物を伝えるためのポートフォリオサイト(これ)です。',
     tags: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'],
     image: '/images/projects/portfolio-site.png',
+    url: 'https://tomoki-arai.vercel.app/',
     year: '2026.06',
     overview: '自分自身の制作物や公開データを整理して見せるためのWebサイトです。白基調のUI、余白、カード、軽いモーションを組み合わせ、作品・ダウンロード・問い合わせまで自然につながる構成にしました。',
     features: ['触れる3Dオブジェクト風のヒーロー表現', '作品カードとカテゴリフィルタ', 'ダウンロード導線', 'お問い合わせフォーム']

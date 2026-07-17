@@ -103,7 +103,7 @@
   .now-panel p {
     grid-column: auto;
   }
-  .work-actions { grid-template-columns: 1fr; }
+  .work-actions .btn { width: 100%; }
   .download-row {
     grid-template-columns: 84px 1fr 44px;
     gap: 14px;

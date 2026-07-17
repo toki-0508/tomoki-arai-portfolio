@@ -687,8 +687,8 @@
   background: var(--bg-soft);
 }
 .work-actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   margin-top: 34px;
 }

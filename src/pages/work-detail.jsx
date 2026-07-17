@@ -22,10 +22,11 @@ export function WorkDetailPage({ id }) {
             </div>
             <div className="work-main-visual">{work.thumb}</div>
           </div>
-          <div className="work-actions">
-            <a className="btn btn-ghost" href="#demo" onClick={(e) => e.preventDefault()}>Live Demo <Icon.Arrow/></a>
-            <a className="btn btn-ghost" href="#github" onClick={(e) => e.preventDefault()}>GitHub <Icon.Arrow/></a>
-          </div>
+          {work.url && (
+            <div className="work-actions">
+              <a className="btn btn-primary" href={work.url} target="_blank" rel="noopener noreferrer">サイトに飛ぶ <Icon.Arrow/></a>
+            </div>
+          )}
         </div>
       </section>
     </div>
