@@ -2,6 +2,13 @@ const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'toki.zeno.0508@gmail.c
 const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Portfolio Contact <onboarding@resend.dev>';
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
+// この API を呼び出してよいオリジン。GitHub Pages(サブ公開)と Vercel(本番)。
+const ALLOWED_ORIGINS = new Set([
+  'https://toki-0508.github.io',
+  'https://tomoki-arai.vercel.app',
+  'https://tomoki-arai-portfolio.vercel.app',
+]);
+
 const MAX_FIELD_LENGTHS = {
   name: 80,
   email: 160,
@@ -148,6 +155,14 @@ async function sendContactEmail(fields) {
 export default async function handler(request, response) {
   response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // GitHub Pages 版はこの API をクロスオリジンで叩くため、許可オリジンを明示する。
+  // Vercel 版は同一オリジンなので、この分岐に関係なく従来どおり動作する。
+  const origin = request.headers.origin;
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    response.setHeader('Access-Control-Allow-Origin', origin);
+    response.setHeader('Vary', 'Origin');
+  }
 
   if (request.method === 'OPTIONS') {
     response.statusCode = 204;
