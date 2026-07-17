@@ -22,20 +22,20 @@ const normalizeTags = (tags) => tags.map((tag) => Array.isArray(tag) ? tag : [ta
 
 // ============ THUMB ============
 // image: '/images/projects/sample.png' -> public/images/projects/sample.png
+// 見た目は .thumb-img (components.css) 側で持つ。読み込み後に出す部分だけ state で切り替える。
+// 既定は cover。縦長のスクショを切り抜きたくない箇所は CSS 側で contain に上書きする。
 function ThumbImage({ image, alt = '' }) {
   const [loaded, setLoaded] = useState(false);
   return (
     <img
+      className="thumb-img"
       src={image}
       alt={alt}
       loading="lazy"
       onLoad={() => setLoaded(true)}
       style={{
-        width: '100%', height: '100%', objectFit: 'cover', display: 'block',
         opacity: loaded ? 1 : 0,
         transform: loaded ? 'scale(1)' : 'scale(1.04)',
-        transition: 'opacity .5s ease, transform .8s ease',
-        background: '#EFF1F5',
       }}
     />
   );

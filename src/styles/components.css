@@ -359,3 +359,17 @@ section.block { padding: 56px 0; }
   z-index: 100;
   pointer-events: none;
 }
+
+/* ============ THUMB IMAGE ============ */
+/* カードなどは枠いっぱいに敷き詰めたいので cover で切り抜く。 */
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: var(--bg-soft);
+  transition: opacity .5s ease, transform .8s ease;
+}
+/* 詳細のメインビジュアルは作品そのものを見せる場所なので、
+   縦長のスクショでも欠けないよう全体を収める。 */
+.work-main-visual .thumb-img { object-fit: contain; }
