@@ -48,7 +48,7 @@ export function AboutPage() {
             <h1 className="h-display about-title">つくる理由を、いつも近くに置く。</h1>
             <p className="h-body">
               ただ動くものを作るだけではなく、誰かが「使ってよかった」と感じられる体験に近づけたい。
-              そのために、Mission / Vision / Values を判断軸として持ちながら、Web・アプリ・3Dを制作しています。
+              そのために、Mission / Vision / Values を判断軸として持ちながら、今は将来に向け実装力を高めるために作りたいと興味を持ったWeb・アプリ・3Dを制作しています。
             </p>
             <div className="mvv-points" aria-label="制作で大切にしている軸">
               <span>Touch</span>
