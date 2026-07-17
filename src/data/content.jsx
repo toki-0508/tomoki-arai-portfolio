@@ -81,7 +81,7 @@ export const PROJECTS = [
   defineProject({
     id: 'kakeibo-app',
     name: '便利な家計簿！',
-    catKey: 'web',
+    catKey: 'app',
     desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。',
     tags: ['Flutter', 'Dart', 'Firebase'],
     image: '/images/projects/kakeibo-app.png',
@@ -116,7 +116,7 @@ export const PROJECTS = [
   defineProject({
     id: 'jigyomemo-web',
     name: 'じぎょメモ',
-    catKey: 'web',
+    catKey: 'app',
     desc: '事業アイデアをメモすることに特化したメモアプリで項目に沿って埋めるだけで価値あるアイデアにまとめることができます',
     tags: [['Flutter', 'amber'], ['dart', 'amber'], ['Firebase', 'amber']],
     image: '/images/projects/jigyomemo-web.png',
