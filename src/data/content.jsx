@@ -96,7 +96,7 @@ export const PROJECTS = [
     desc: 'Reactと3D表現を組み合わせた、制作物を伝えるためのポートフォリオサイト(これ)です。',
     tags: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'],
     image: '/images/projects/portfolio-site.png',
-    url: 'https://tomoki-arai.vercel.app/',
+    url: 'https://tomoki-arai-portfolio.vercel.app/#/',
     year: '2026.06',
     overview: '自分自身の制作物や公開データを整理して見せるためのWebサイトです。白基調のUI、余白、カード、軽いモーションを組み合わせ、作品・ダウンロード・問い合わせまで自然につながる構成にしました。',
     features: ['触れる3Dオブジェクト風のヒーロー表現', '作品カードとカテゴリフィルタ', 'ダウンロード導線', 'お問い合わせフォーム']
@@ -108,6 +108,7 @@ export const PROJECTS = [
     desc: '日頃の出費や収入、サブスクによる支出まで便利に簡単に管理できるサービスです！。',
     tags: ['Flutter', 'Dart', 'Firebase'],
     image: '/images/projects/kakeibo-app.png',
+    url: 'https://bennrina-kakeibo.web.app/#/',
     year: '2026.06',
     overview: '毎日の家計簿を簡単に管理できる多機能な家計簿サービスです',
     features: ['家計簿の作成・編集・完了管理', 'スマホで見やすいレイアウト']
@@ -130,20 +131,10 @@ export const PROJECTS = [
     desc: '毎日ランダムな名言が1個表示されるサイト',
     tags: [['API', 'violet'], ['Firebase', 'violet'], ['JS', 'violet']],
     image: '/images/projects/kyounomeigen-web.png',
+    url: 'https://kyounomeigen-ec5b7.web.app/',
     year: '2025.10',
     overview: '思いつきで作った名言が1日一個取り上げられているサイトで偉人やアニメ、漫画から選ばれた有名な名言を紹介しています。',
     features: ['API利用']
-  }),
-  defineProject({
-    id: 'rennda-app',
-    name: '自動連打ツール',
-    catKey: 'app',
-    desc: 'シンプルかつパソコンに負担がかかりづらい使いやすい連打ツールです',
-    tags: [['Python','green']],
-    image: '/images/projects/rennda-app.png',
-    year: '2025.06',
-    overview: '連打ツールは作業やゲームをしていると欲しくなる時が結構あると思うのですがどこからダウンロードしたら安全なのかや軽いのかが難しいため自作しました。',
-    features: ['自動ツール']
   }),
   defineProject({
     id: 'jigyomemo-web',
@@ -152,6 +143,7 @@ export const PROJECTS = [
     desc: '事業アイデアをメモすることに特化したメモアプリで項目に沿って埋めるだけで価値あるアイデアにまとめることができます',
     tags: [['Flutter', 'amber'], ['dart', 'amber'], ['Firebase', 'amber']],
     image: '/images/projects/jigyomemo-web.png',
+    url: 'https://jigyomemo.web.app/',
     year: '2026.5',
     overview: '事業アイデアをメモすることに特化していて現在のレベル感に合わせてアイデアをメモすることでフレームワークを活用することにより具体的に事業計画的にまとめることができます',
     features: ['誰でもわかりやすいUI']
@@ -185,7 +177,7 @@ export const DOWNLOADS = [
     category: 'sounds',
     size: '1.05 MB',
     date: '2026.07',
-    desc: 'garagebandを使って作った銭湯の場面をイメージしたBGMです。',
+    desc: 'garagebandを使って作った戦闘の場面をイメージしたBGMです。',
     image: '/images/projects/chilltime.png',
     file: '/downloads/BitFight.mp3',
   }),
