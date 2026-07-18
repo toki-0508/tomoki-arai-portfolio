@@ -77,7 +77,7 @@ export const PROJECTS = [
     desc: 'Reactと3D表現を組み合わせた、制作物を伝えるためのポートフォリオサイト(これ)です。',
     tags: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'],
     image: '/images/projects/portfolio-site.png',
-    url: 'https://tomoki-arai-portfolio.vercel.app/#/',
+    url: 'https://tomoki-arai.vercel.app/',
     year: '2026.06',
     overview: '自分自身の制作物や公開データを整理して見せるためのWebサイトです。白基調のUI、余白、カード、軽いモーションを組み合わせ、作品・ダウンロード・問い合わせまで自然につながる構成にしました。',
     features: ['触れる3Dオブジェクト風のヒーロー表現', '作品カードとカテゴリフィルタ', 'ダウンロード導線', 'お問い合わせフォーム'],
