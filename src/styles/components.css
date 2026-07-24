@@ -315,7 +315,7 @@ section.block { padding: 56px 0; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(220px, 1fr);
   gap: 40px;
 }
 .footer-brand { display: flex; flex-direction: column; gap: 22px; }
@@ -338,6 +338,13 @@ section.block { padding: 56px 0; }
   font-weight: 700;
 }
 .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-menu-links {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  column-gap: 40px;
+  row-gap: 10px;
+  max-width: 360px;
+}
 .footer-col a { font-size: 13px; color: var(--ink); }
 .footer-col a:hover { color: var(--blue); }
 .footer-bottom {

@@ -103,25 +103,11 @@ export function Footer() {
         </div>
         <div className="footer-col">
           <h5>メニュー</h5>
-          <ul>
+          <ul className="footer-menu-links">
             <li><a href="#/about" onClick={(e) => go(e, '/about')}>About</a></li>
             <li><a href="#/works" onClick={(e) => go(e, '/works')}>Works</a></li>
-          </ul>
-        </div>
-        <div className="footer-col">
-          <h5>&nbsp;</h5>
-          <ul>
             <li><a href="#/downloads" onClick={(e) => go(e, '/downloads')}>Downloads</a></li>
             <li><a href="#/contact" onClick={(e) => go(e, '/contact')}>Contact</a></li>
-          </ul>
-        </div>
-        <div className="footer-col">
-          <h5>得意分野</h5>
-          <ul>
-            <li><a href="#a">3Dデザイン</a></li>
-            <li><a href="#a">Web / アプリ開発</a></li>
-            <li><a href="#a">ツール開発</a></li>
-            <li><a href="#a">UI / UXデザイン</a></li>
           </ul>
         </div>
       </div>
